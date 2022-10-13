@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,400&display=swap');
+
+body{
+    background-color: #000;
+}
+header{
+    font-family:  'Poppins', sans-serif;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 91px;
+    background-color: black;
+    z-index: 2;
+
+
+    >.logo{
+        background-image: url(./../images/logo/logo.svg);
+        background-repeat: no-repeat;
+        width: 160px;
+        height: 50px;
+        margin-top: 20px;
+        margin-left: 3%;
+        z-index: 1;
+
+        >a{
+            display: block;
+            height: 50px;
+            text-indent: -99999px;
+        }
+
+    }
+
+    >.menu{
+        position: relative;
+        width: 100%;
+        height: 90px;
+        top:-70px;
+        z-index: 500;
+
+
+        nav{
+            
+            width: 100%;
+            height: 90px;
+            border-bottom: 1px solid #707070;
+
+
+
+            
+            
+            >.gnb{
+               
+                display: flex;
+                position: relative;
+                width: 550px;  
+                left: 40%;
+                top: 38px;
+                
+                
+                
+   
+                >li{
+                    text-align: center;
+                    transition: all 0.2s ease-in-out;
+
+                    >a{
+                        display: block;
+                        color: #fff;
+                        font-size: 18px;
+                       
+                        
+                    }
+
+                }//li
+
+                >.gnb_1{   
+                    top: 0;
+                    left: 0%;
+                    position: absolute;
+                    width: 149px;   
+                }
+                >.gnb_2{
+                    top: 0;
+                    left: 28%;
+                    position: absolute;
+                    width: 112px;   
+                }
+                >.gnb_3{
+                     top: 0;
+                    left: 49%;
+                    position: absolute;
+                    width: 112px;
+                }
+
+
+            }//gnb
+
+            >.sub{
+                position: absolute;
+                display: flex;
+                top: 30px;
+                right: 3%;
+                width: 100px;
+                line-height: 30px;
+                justify-content: space-between;
+                font-size: 14px;
+
+                >li{
+                    >a{
+                        color: #fff;
+                        font-weight: 400;
+                    }
+              
+                }
+
+                >.on{
+                   >a{
+                    color: #00d67a;;
+                   }
+                }
+                
+            }//sub
+
+        }//nav
+ 
+        .bg_lnb{
+            z-index: 0;
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 350px;
+            top:-350px;
+            left: 0;
+            
+            background-color: #000;
+            transition: all 0.3s ease-in-out;
+            border-bottom: 1px solid #707070;
+            overflow: hidden;
+        
+            >.lnb{
+                position: absolute;
+                height: 260px;
+                display: block;
+                transform:translate(-50%); 
+                top: 90px;
+                left: 100%;
+                transition: all 0.2s ease-in-out;
+                border: 1px solid #707070;
+                // display: none;
+        
+        
+        
+                &:nth-child(1){
+        
+                    position: absolute;
+                    left: 42.2%;
+                    width: 169px;    
+                    border-right: none;
+                    border-bottom:none;
+         
+        
+                   
+                }
+                &:nth-child(2){
+                    position: absolute;
+                    width: 169px;
+                    left: 51%;
+                    border-bottom:none;
+                    
+                   
+                  
+                }
+                &:nth-child(3){
+                    width: 150px;
+                    left: 59.5%;
+                    border-left: none;
+                    border-bottom:none;
+                
+        
+        
+                }
+                
+        
+                >li{
+                    font-family: 'Noto Sans KR';
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-align: center;
+        
+                    &:nth-child(1){
+                        margin-top: 35px;
+                    }
+        
+                   >a{
+                   
+                    display: block;
+                    line-height: 35px;
+                    color: #fff;
+        
+                    
+                        &:hover{
+                            color: #00d67a;;
+                        }
+                   }
+        
+        
+                   >.bar_1{
+                    position: absolute;
+                    top: 0px;
+                    left: 0;
+                    height: 3px;
+                    width: 100%;    
+                    transition: all 0.1s ease;
+                    border-top: 2px solid #00d67a;
+                    box-sizing: border-box;
+                    display: none;
+                   }
+        
+        
+                   >.bar_2{
+                    position: absolute;
+                    top: 0px;
+                    left: 0;
+                    height: 3px;
+                    width: 100%;
+                    transition: all 0.1s ease;
+                    border-top: 2px solid #00d67a;
+                    box-sizing: border-box;
+                    display: none;
+                   }
+                   >.bar_3{
+                    position: absolute;
+                    top: 0px;
+                    left: 0;
+                    height: 3px;
+                    width: 100%;
+                    transition: all 0.1s ease;
+                    border-top: 2px solid #00d67a;
+                    box-sizing: border-box;
+                    display: none;
+                   }
+                
+            }//end of li
+            }//.lnb
+        }//.bg_lnb
+    }//menu
+}//header
+
+
+
+.main{
+    padding-top: 90px;
+    margin-top: 90px;
+    height: 720px;
+    color: #fff;
+    border-bottom: 1px solid #707070;
+    font-family: 'Fira Mono', monospace;
+    position: relative;
+  
+
+    >h2{
+        padding-left: 90px;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: 400;
+
+        >.color{
+            color: #00d67a;
+        }
+    }
+
+    >.main_1{
+        margin-left: 90px;
+        margin-top: 50px;
+
+        >#dynamic{ 
+            position: relative;
+            display: inline;
+            // border: 1px solid #ff0;
+            &::after{
+                content: "";
+                display: block;
+                position: absolute;
+                width: 4px;
+                top: 330px;
+                right: -30px;
+                height: 60px;
+                // border: 1px solid #ff0;
+                background-color: #fff;        
+            } //커서효과1
+
+                &.active::after{
+                    display: none;
+                }
+        }
+    
+        
+        >.main_text1{
+            color: #00d67a;
+            font-size: 60px;
+            line-height: 80px;
+            vertical-align: baseline;
+
+        }
+    }
+
+
+    >.main_text2{
+        margin-top: 120px;
+        padding-left: 150px;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: 400;
+        >.color{
+            color: #00d67a;
+        }
+
+    }
+
+    // 화살표
+    @keyframes motion {
+        0% {margin-top: 0px;}
+        100% {margin-top: 10px;}
+    }
+
+    .main_scroll_fixed {
+        position: absolute;
+        bottom: 3.75em;
+        margin-bottom: 38px;
+        bottom: 15px;
+        left: 5rem;
+        width: 4em;
+        height: 4em;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    .main_scroll_fixed svg {
+        width: 100%;
+        height: 100%;
+        animation: motion 0.5s ease-in 0s infinite alternate ; 
+        margin-top: 0; 
+    }
+    .main_scroll_fixed svg path {
+        fill: #fff;
+    }
+}//main

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>wow 사용법</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <style>
+        #wrap{
+            width: 980px;
+            margin: 0 auto;
+        }
+        section{
+            text-align: center;
+            line-height: 300px;
+            height: 300px;
+            margin-bottom: 60px;
+        }
+        .magenta{
+            background-color: magenta;
+        }
+        .skyblue{
+            background-color: skyblue;
+        }
+        .orange{
+            background-color: orange;
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>//순서중요
+    <script src="./js/wow.min.js"></script>
+    <script>//HTML위에 쓰기 위해서는 준비핸들러 필요.
+    $(function(){
+        new WOW().init();
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header style="height: 800px;">
+            <h1 class="text-center">wow 플러그인</h1>
+        </header>
+        <section class="magenta wow fadeInUp" data-wow-delay="200ms">내용-1</section>
+        <section class="skyblue wow bounce">내용-2</section>
+        <section class="orange wow wobble">내용-3</section>
+        <section class="magenta wow fadeInLeftBig">내용-4</section>
+        <section class="skyblue wow rollOut">내용-5</section>
+        <section class="orange wow hinge">내용-6</section>
+        <footer class="text-center">footer</footer>
+    </div>
+</body>
+</html>

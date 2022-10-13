@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+
+h1,address{
+    margin-left: 200px;
+    text-align: left;
+}
+h1{
+    text-indent: -9999px;
+    margin-bottom: 50px;
+}
+
+.slides{
+    overflow: hidden;
+    position: relative;
+    width: 1500px;
+    height: 800px;
+    margin: 0 auto;
+    border: 1px solid rgb(108, 71, 39);
+}
+
+
+.slides>.slides-container{
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(1500px * 5);
+
+    transition: all 0.4s ease-in-out;
+}
+
+.slides>.slides-container>p{
+    width: 1500px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.slides>.slides-container>p:nth-child(1){background-image: url(./../images/slide-1.jpg);}
+.slides>.slides-container>p:nth-child(2){background-image: url(./../images/slide-2.jpg);}
+.slides>.slides-container>p:nth-child(3){background-image: url(./../images/slide-3.jpg);}
+.slides>.slides-container>p:nth-child(4){background-image: url(./../images/slide-4.jpg);}
+.slides>.slides-container>p:nth-child(5){background-image: url(./../images/slide-5.jpg);}
+
+.slides>.slides-container>p>a{
+    display: block;
+    height: 800px;
+    text-indent: -9999px;
+}
+
+.slides>.slides-pagination{
+    display: flex;
+    position: absolute;
+    left: 10px;
+    top: 20%;
+    margin-top: -150px;
+
+}
+
+.slides>.slides-pagination>li{
+    width: 30px;
+    margin-right: 10px;
+    opacity: 80%;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.slides>.slides-pagination>li:nth-child(1){background-image: url(./../images/indicator-1.jpg);}
+.slides>.slides-pagination>li:nth-child(2){background-image: url(./../images/indicator-2.jpg);}
+.slides>.slides-pagination>li:nth-child(3){background-image: url(./../images/indicator-3.jpg);}
+.slides>.slides-pagination>li:nth-child(4){background-image: url(./../images/indicator-4.jpg);}
+.slides>.slides-pagination>li:nth-child(5){background-image: url(./../images/indicator-5.jpg);}
+
+
+.slides>.slides-pagination>li>a{
+    display: block;
+    height: 30px;
+    text-indent: -9999px;
+}
+
+.slides>.slides-pagination>li:hover>a,
+.slides>.slides-pagination>li.on>a{
+    border: 3px solid rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+/* 마우스 오버박스 */
+.stop{
+    text-align: center;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 60px;
+    border: 1px solid rgb(255, 255, 255);
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+}
+
+.stop:hover{
+ display: block;
+ color: rgb(255, 213, 0);
+}
+
+
+.start{
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    width: 60px;
+    border: 1px solid rgb(255, 255, 255);
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+
+}
+
+.start:hover{
+ display: block;
+ color: rgb(255, 213, 0);
+}
+
+
+
+
+/* 이전, 다음 */
+.slides>.slides-navigation{
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 100px;
+    margin-top: -50px;
+    text-indent: -9999px;
+    background-image: url(./../images/btn_navigation.png);
+}
+
+.slides>.slides-navigation.prev{
+    left: 0;
+    background-position: -5px -225px;
+}
+
+.slides>.slides-navigation.prev:hover{
+    background-position: -5px -335px;
+}
+
+.slides>.slides-navigation.next{
+    right: 0;
+    background-position: -5px -5px;
+}
+
+.slides>.slides-navigation.next:hover{
+    background-position: -5px -115px;
+}
+
+/* 자동실행버튼 */
+/* .slides>.slides-auto {
+    display: block;
+    position: absolute;
+    top: 15px;
+
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    background-image: url(./../images/icons.png);
+
+}
+.slides>.slides-auto.play {
+    right: 10px;
+    background-position: -62px -24px
+}
+.slides>.slides-auto.stop{
+    right: 40px;
+    background-position: 0 -57px
+} */
+
+address{line-height: 50px;
+        color: rgb(75, 41, 20);}

@@ -1,0 +1,962 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* 공통요소 */
+.clearfix{*zoom:1}
+.clearfix:after{display:block;clear:both;content:'';}
+
+/* 헤더영역 */
+header{
+    position: fixed;
+    width: 100%;
+    margin-top: -100px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #0055d4dc;
+    box-sizing: border-box;
+    border-left: none;
+    border-right: none;
+    display: block;
+    z-index: 100;
+    
+}
+header>.container{
+    position: relative;
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    /* background-color: pink; */
+}
+header>.container>h1.logo{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    width: 200px;
+    margin-top: -15px;
+    background-image: url(./../images/logo_01.png);
+    background-size: 100%;
+    background-position: 0 -7px;
+}
+
+header>.container>h1.logo>a{
+    display: block;
+    height: 30px;
+    text-indent: -9999px;
+}
+
+header>.container>nav{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -15px;
+}
+
+header>.container>nav>.gnb{
+    display: flex;
+    font-family: 'GmarketSansMedium';
+}
+header>.container>nav>.gnb>li>a{
+    display: block;
+    height: 30px;
+    padding: 0 30px;
+    color: #181818;
+    font-size: 17px;
+    line-height: 30px;
+}
+header>.container>nav>.gnb>li:hover>a{
+    color: #1F30AD;
+}
+header>.container>nav>.gnb>li.on>a{
+    color: #1F30AD;
+    font-weight: 600;
+}
+
+
+/* <!-- 비주얼슬라이드 --> */
+#visual{
+    overflow: hidden;
+    font-size: 15px;
+    margin-top: 100px;
+    height: 860px;
+    font-weight: 600;
+    width: 100%;
+}
+#visual>.screen{
+    position: relative;
+    display: flex;
+    width: 800%;
+    height: 700px;
+    left: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+#visual>.screen>li{
+    width: 12.5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#visual>.screen>li:nth-child(1){
+    width: 100%;
+    background-image: url(../images/namgu_jangsaengpo_03.jpg);
+}
+#visual>.screen>li:nth-child(2){
+    width: 100%;
+    background-image: url(../images/ulsan_01.jpg);}
+#visual>.screen>li:nth-child(3){
+    width: 100%;
+    background-position: 0 -80px;
+    background-image: url(../images/daewangam\ Park_06.jpg);}
+#visual>.screen>li:nth-child(4){
+    width: 100%;
+    background-image: url(../images/gajisan_03.jpg);
+    background-position: 0 center;
+}
+    
+#visual>.screen>li:nth-child(5){
+    width: 100%;
+    background-image: url(../images/ganjeolgot_04.jpg);
+    background-position: 0 0px;
+}
+#visual>.screen>li:nth-child(6){
+    width: 100%;
+    background-image: url(../images/ulsan_art_museum_02.jpg);}
+#visual>.screen>li:nth-child(7){
+    width: 100%;
+    background-image: url(../images/ganjeolgot_01.jpeg);}
+#visual>.screen>li:nth-child(8){
+    width: 100%;
+    background-image: url(../images/taehwa_national_garden_08.jpg);}
+
+
+
+/* 비주얼슬라이드 이전 다음 */
+.slides-navigation{
+    display: block;
+    position: absolute;
+    top: 45%;
+    width: 60px;
+    height: 60px;
+    margin-top: -50px;
+    text-indent: -9999px;
+}
+
+.slides-navigation.prev{
+    left: 30px;
+    background-image: url(../images/btn_slider_prev01.png);
+}
+
+.slides-navigation.prev:hover{
+    opacity: 60%;
+}
+.slides-navigation.next{
+    right: 30px;
+    background-image: url(../images/btn_slider_next01.png);
+}
+.slides-navigation.next:hover{
+    opacity: 60%;
+}
+
+
+/* 비주얼슬라이드 영역*/
+.navigation-button{
+    position: relative;
+    bottom: 190px;
+    left: 29%;
+    display: flex;
+    width: 800px;
+    background-color: rgba(12, 12, 12, 0.3);
+}
+.navigation-button>li{
+    width: 100px;
+   
+}
+.navigation-button>li:hover>a,
+.navigation-button>li.on>a{
+    background-color: #4255e0;
+}
+
+.navigation-button>li>a{
+    display: block;
+    height: 5px;
+    text-indent: -9999px;
+}
+
+/* 재생, 정지 버튼 */
+.slides-auto {
+    display: block;
+    position: relative;
+    bottom: 240px;
+    width: 10px;
+    height: 10px;
+    text-indent: -9999px;
+    background-size: contain;
+    opacity: 60%;
+    background-color: rgb(68, 68, 68);
+    border: 7px solid rgb(68, 68, 68);
+
+
+}
+
+/* 자동재생 */
+.slides-auto.play{
+    left: 29%;
+    background-image: url(../images/play.png);
+    
+}
+.slides-auto.stop{
+    bottom: 264px;
+    margin-left: 30px;
+    left: 29.5%;
+    background-image: url(../images/stop.png);
+}
+
+.slides-auto.play:hover,
+.slides-auto.stop:hover{
+    opacity: 100%;
+}
+
+
+/* 추천여행지 서브 해시태그 */
+#visual>.hashtag1{
+ margin: 32px auto 0px;
+ width: 850px;
+ display: flex;
+ text-align: center;
+ justify-content: space-between;
+}
+
+#visual>.hashtag1>li:hover,
+#visual>.hashtag2>li:hover{
+    background-color: #eaedff;
+}
+
+#visual>.hashtag1>li{
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+#visual>.hashtag2{
+    margin: 15px auto;
+    width: 850px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+   }
+   #visual>.hashtag2>li{
+    display: block;
+       border: 1px solid #ccc;
+       padding: 10px;
+       border-radius: 5px;
+   }
+
+
+
+
+/* 컨텐츠영역 */
+section{
+    /* border-top: 1px solid transparent;
+    box-sizing: border-box; */
+}
+
+section>article{
+
+}
+
+
+/* 울산광역시 소개 */
+section>article.cont1{
+    width: 1200px;
+    margin: 50px auto;
+    height: 700px;
+    background-color: #fff(197, 101, 101);
+    position: relative;
+}
+section>article.cont1>h3{
+    margin-top: 30px;
+    color: #1F30AD;
+    width: 300px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+
+    font-size: 22px;
+    font-family: 'SUIT-Regular';
+    font-weight: 600;
+}
+section>article.cont1>.contents{   
+ position: absolute;
+ top: 130px;
+}
+
+section>article.cont1>.contents>.ulsan_brand_images{
+width: 100%;
+height: 300px;
+display: flex;
+}
+
+section>article.cont1>.contents>.ulsan_brand_images>li{
+    width: 100%;
+    background-image: url(../images/img_brand.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -9999px;
+}
+
+section>article.cont1>.contents>p{
+    margin-top: 30px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 150px;
+    line-height: 40px;
+    color: #181818;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-family: 'SUIT-Regular';
+}
+
+
+/* 두번째 슬라이드 관광지 안내 */
+section>article.cont2{
+
+    height: 1000px;
+    width: 1200px;
+    background-color: #fff;
+    /* border: 1px solid #000; */
+    margin: 0px auto;
+
+
+}
+
+section>article.cont2>.cont2_title_1{
+    margin-top: 30px;
+    color: #1F30AD;
+    width: 300px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+   
+    font-size: 22px;
+    font-family: 'SUIT-Regular';
+    font-weight: 600;
+}
+
+section>article.cont2>.cont2_title_2{
+    margin-top: 50px;
+    color: #1F30AD;
+    width: 300px;
+    height: 50px;
+    line-height: 120px;
+    text-align: center;
+    font-size: 22px;
+    font-family: 'SUIT-Regular';
+    font-weight: 600;
+}
+
+
+
+section>article.cont2>.slide_list_1{
+width: 1000px;
+position: relative;
+left: 95px;
+height: 320px;
+overflow: hidden;
+}
+
+section>article.cont2>.slide_list_1>.list_1{
+/* border: 1px solid rgb(241, 2, 2); */
+width: calc(250px * 8);
+display: flex;
+position: absolute;
+left: 0px;
+top:0px;
+transition: all 0.4s ease-in-out;
+}
+
+section>article.cont2>.slide_list_1>.list_1>li{
+width: 230px;
+margin-left: 20px;
+background-size: cover;
+font-family:'SUIT-Regular';
+font-size: 14px;
+border-bottom: 2px solid #4255e0;
+}
+
+section>article.cont2>.slide_list_1>.list_1>li:nth-child(1){
+    background-image: url(../images/taehwa_national_garden_07.jpg);
+    background-position: 0 -80px;
+}
+
+
+section>article.cont2>.slide_list_1>.list_1>li:nth-child(2){
+    background-image: url(../images/gangdong.jpg);
+    background-size: cover;
+
+}
+section>article.cont2>.slide_list_1>.list_1>li:nth-child(3){
+    background-image: url(../images/hoeya_dam\ eco_marsh_03.jpg);
+    background-size: cover;
+    background-position: center center;
+
+}
+section>article.cont2>.slide_list_1>.list_1>li:nth-child(4){
+    background-image: url(../images/gajisan_01.jpg);
+    background-position: 0 -80px;
+
+}
+section>article.cont2>.slide_list_1>.list_1>li:nth-child(5){
+    background-image: url(../images/ganjeolgot_02.jpeg);
+    background-position: center center;
+}
+section>article.cont2>.slide_list_1>.list_1>li:nth-child(6){
+    background-image: url(../images/cheonjeon-ri_petroglyphs_02.jpg);
+    background-position: 0 -80px;
+
+}
+section>article.cont2>.slide_list_1>.list_1>li:nth-child(7){
+    background-image: url(../images/bangudae_01.jpg);
+    background-position: 0 -80px;
+
+}
+section>article.cont2>.slide_list_1>.list_1>li:nth-child(8){
+    background-image: url(../images/daewangam\ Park_01.jpg);
+    background-position: 0 -80px;
+}
+
+section>article.cont2>.slide_list_1>.list_1>li>p{
+ background-color: #fff;
+ margin-top: 210px;
+ padding: 15px;
+ height: 60px;
+ line-height: 20px;
+ color: #181818;
+}
+
+section>article.cont2>.slide_list_1>.list_1>li>a>span{
+color: #fff;
+font-family: 'SUIT-Regular';;
+font-size: 16px;
+position: relative;
+top: 195px;
+left: 15px;
+width: 240px;
+text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+/* 두번째 슬라이드 - 추천관광지 */
+
+section>article.cont2>.slide_list_2{
+    margin-top: 50px;
+    width: 1000px;
+    position: relative;
+    left: 95px;
+    height: 320px;
+    overflow: hidden;
+    }
+
+
+
+section>article.cont2>.slide_list_2>.list_2{
+/* border: 1px solid rgb(241, 2, 2); */
+width: calc(250px * 8);
+display: flex;
+position: absolute;
+left: 0px;
+top:0px;
+transition: all 0.4s ease-in-out;
+}
+
+section>article.cont2>.slide_list_2>.list_2>li{
+width: 230px;
+border-bottom: 2px solid #4255e0;
+font-family:'SUIT-Regular';
+font-size: 14px;
+background-size: cover;
+margin-left: 20px;
+}
+
+section>article.cont2>.slide_list_2>.list_2>li:nth-child(1){
+    background-image: url(../images/grand_wheel_01.jpg);
+    background-position: center 0;
+}
+
+
+section>article.cont2>.slide_list_2>.list_2>li:nth-child(2){
+    background-image: url(../images/ulsan_art_museum_01.jpeg);
+    background-size: cover;
+    background-position: center center;
+
+}
+section>article.cont2>.slide_list_2>.list_2>li:nth-child(3){
+    background-image: url(../images/pareaso.jpeg);
+    background-size: cover;
+    background-position: center -80px;
+
+}
+section>article.cont2>.slide_list_2>.list_2>li:nth-child(4){
+    background-image: url(../images/sinbulsan_01.jpg);
+    background-position: 0 -80px;
+
+}
+section>article.cont2>.slide_list_2>.list_2>li:nth-child(5){
+    background-image: url(../images/FF-951.jpg);
+    background-position: center center;
+
+}
+section>article.cont2>.slide_list_2>.list_2>li:nth-child(6){
+    background-image: url(../images/namgu_jangsaengpo_01.jpeg);
+    background-position: 0 -80px;
+
+}
+section>article.cont2>.slide_list_2>.list_2>li:nth-child(7){
+    background-image: url(../images/seoknamsa\ _temple_02.jpeg);
+    background-position: center 0;
+
+}
+section>article.cont2>.slide_list_2>.list_2>li:nth-child(8){
+    background-image: url(../images/ulsan_grand_park.jpg);
+    background-position: center center;
+}
+
+section>article.cont2>.slide_list_2>.list_2>li>p{
+ background-color: #fff;
+ margin-top: 210px;
+ padding: 15px;
+ height: 60px;
+ line-height: 20px;
+ color: #181818;
+}
+
+section>article.cont2>.slide_list_2>.list_2>li>a>span{
+color: #fff;
+font-family: 'SUIT-Regular';;
+font-size: 16px;
+position: relative;
+top: 195px;
+left: 15px;
+width: 240px;
+text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+
+/* list_1 이전다음 */
+.list1-navigation{
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin-top: -50px;
+    text-indent: -9999px;
+    opacity: 50%;
+
+}
+
+
+.list1-navigation.prev{
+    top:-14%;
+    background-size: cover;
+    right: 20px;
+    background-image: url(../images/btn_slider_prev03.png);
+}
+
+.list1-navigation.prev:hover{
+    opacity: 80%;
+}
+.list1-navigation.next{
+    background-size: cover;
+    left: 1200px;
+    top: -12.5%;
+    background-image: url(../images/btn_slider_next03.png);
+}
+.list1-navigation.next:hover{
+    opacity: 80%;
+}
+
+/* list_2 이전다음 */
+
+.list2-navigation{
+    display: block;
+    position: relative;
+   
+    width: 32px;
+    height: 32px;
+    margin-top: -50px;
+    text-indent: -9999px;
+    opacity: 50%;
+}
+
+
+.list2-navigation.prev{
+    background-size: cover;
+    right: 20px;
+    top: -14%;
+    background-image: url(../images/btn_slider_prev03.png);
+}
+
+.list2-navigation.prev:hover{
+    opacity: 80%;
+}
+.list2-navigation.next{
+    background-size: cover;
+    left: 1200px;
+    top: -12%;
+    background-image: url(../images/btn_slider_next03.png);
+}
+.list2-navigation.next:hover{
+    opacity: 80%;
+}
+
+
+
+
+
+/* 맛집탐방영역 */
+section>article.cont3{
+    height:800px;
+    width: 100%;
+    background-color: rgb(242, 248, 255);
+    /* border: 1px solid #000; */
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+section>article.cont3>h3{
+    margin-bottom: 20px;
+    color: #1F30AD;
+    width: 150px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    position: relative;
+    top: 60px;
+    left: 200px;
+    font-size: 22px;
+    font-family: 'SUIT-Regular';
+    font-weight: 600;
+}
+
+section>article.cont3>.food_list>.food_list_thmbs>p
+{
+    width: 150px;
+    font-size: 18px;
+    font-family: 'SUIT-Regular';
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #181818;
+    font-weight: 600;
+
+}
+
+
+section>article.cont3>.food_list{
+    display: flex;
+    width: 1400px;
+    height: 600px;
+    margin: 0 auto;
+    /* border: 1px solid #000; */
+
+
+
+}
+
+section>article.cont3>.food_list>.food_list_slides{
+    overflow: hidden;
+    width: 800px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 10px;
+    position: relative; /*기준점*/
+}
+
+section>article.cont3>.food_list>.food_list_slides>.screen
+{
+display: flex;
+width: calc(800px * 15);
+position: absolute;
+left: 0;
+top: 0;
+
+}
+
+section>article.cont3>.food_list>.food_list_slides>.screen>p{
+    width: 800px;
+    background-position: center center;
+    background-size: cover;
+}
+
+section>article.cont3>.food_list>.food_list_slides>.screen>p>a{
+    display: block;
+    height: 500px;
+    text-indent: -9999px;
+}
+
+/* 큰 이미지 */
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(2){
+background-image: url(../images/waega_1914_01.jpg);
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(3){
+background-image: url(../images/waega_1914_02.jpg);  
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(4){
+ background-image: url(../images/waega_1914_03.jpg);   
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(5){
+background-image: url(../images/waega_1914_04.jpg); 
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(6){
+background-image: url(../images/waega_1914_05.jpg);    
+}
+
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(7){
+background-image: url(../images/chwiseosanjang_03.jpg);    
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(8){
+background-image: url(../images/chwiseosanjang_01.jpg);
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(9){
+background-image: url(../images/chwiseosanjang_02.jpg);
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(10){
+background-image: url(../images/chwiseosanjang_04.jpg);
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(11){
+background-image: url(../images/chwiseosanjang_05.jpg);    
+}
+
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(12){
+background-image: url(../images/greetvicoffee_02.jpg);    
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(13){
+ background-image: url(../images/greetvicoffee_03.jpg);   
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(14){
+background-image: url(../images/greetvicoffee_04.jpg);    
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(15){
+background-image: url(../images/greetvicoffee_05.jpg);    
+}
+section>article.cont3>.food_list>.food_list_slides>.screen>p:nth-child(16){
+background-image: url(../images/greetvicoffee_01.jpg);    
+}
+
+section>article.cont3>.food_list>.food_list_thmbs{
+width:700px;
+height: 700px;
+margin-top: 30px;
+margin-left: 70px;
+
+}
+
+section>article.cont3>.food_list>.food_list_thmbs>li{
+width: 100px;
+height: 100px;
+border: 1px solid #ccc;
+margin: 0px 0 50px 20px;
+float: left;
+overflow: hidden;
+opacity: 70%;
+text-indent: -9999px;
+background-position: 0 center;
+background-size: cover;
+
+}
+section>article.cont3>.food_list>.food_list_thmbs>li>a{
+    display: block;
+    width: 100px;
+    height: 100px;
+    transition: all .2s ease-in-out;
+
+}
+
+
+section>article.cont3>.food_list>.food_list_thmbs>li.on,
+section>article.cont3>.food_list>.food_list_thmbs>li:hover{
+    transform: scale(1.1);
+    opacity: 100%;
+}
+
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(2){
+    background-image: url(../images/waega_1914_01.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(3){
+    background-image: url(../images/waega_1914_02.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(4){
+    background-image: url(../images/waega_1914_03.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(5){
+    background-image: url(../images/waega_1914_04.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(6){
+    background-image: url(../images/waega_1914_05.jpg);
+    margin-right: 0;
+}
+
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(8){
+    background-image: url(../images/chwiseosanjang_03.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(9){
+    background-image: url(../images/chwiseosanjang_01.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(10){
+    background-image: url(../images/chwiseosanjang_02.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(11){
+    background-image: url(../images/chwiseosanjang_04.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(12){
+    background-image: url(../images/chwiseosanjang_05.jpg);
+    margin-right: 0;
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(14){
+    background-image: url(../images/greetvicoffee_02.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(15){
+    background-image: url(../images/greetvicoffee_03.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(16){
+    background-image: url(../images/greetvicoffee_04.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(17){
+    background-image: url(../images/greetvicoffee_05.jpg);
+}
+section>article.cont3>.food_list>.food_list_thmbs>li:nth-child(18){
+    background-image: url(../images/greetvicoffee_01.jpg);
+    margin-right: 0;
+}
+
+
+
+/* 지도와푸터 시간 부족으로 못함 ㅠㅠ */
+
+/* section>article.cont4{
+
+    height: 1000px;
+    background-color: rgba(0, 81, 255, 0.1);
+    border-bottom: 1px solid  #1F30AD;
+}
+section>article.cont4>h3{
+    margin-top: 30px;
+    color: #1F30AD;
+    width: 300px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+
+    font-size: 24px;
+    font-family: 'SUIT-Regular';
+} */
+
+footer{
+    width: 1000px;
+    height: 150px;
+    margin: 30px auto;
+    line-height: 20px;
+  
+}
+footer>.site{
+    display: flex;
+    width: 180px;
+    height: 30px;
+    justify-content: space-between;
+    text-indent: -9999px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    opacity: 80%;
+}
+
+footer>.site>li:hover{
+    opacity: 100%;
+}
+footer>.site>li:nth-child(1){
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/instagram.png);}
+footer>.site>li:nth-child(2){
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/facebook.png);}
+footer>.site>li:nth-child(3){
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/youtube.png);}
+footer>.site>li:nth-child(4){
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/twitter.png);}
+
+footer>.call{
+    font-size: 20px;
+    font-family:'GmarketSansMedium';
+}
+footer>.footer-contents{
+    
+    display: flex;
+    width: 240px;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+footer>.footer-contents>li:hover{
+ color: #1F30AD;
+}
+
+footer>.ft_logo{
+    text-indent: -9999px;
+    width: 170px;
+    height:80px;
+    background-image: url(../images/img_ulsan_logo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 90%;
+    bottom: 60px;
+    opacity: 40%;
+}
+
+footer>address{
+}
+
+aside{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+}
+
+aside>a.top{
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #4255e0;
+    border-radius: 100%;
+}
+
+aside>a.top:hover{
+    opacity: 60%;
+}
+
+aside>a.top>i{color: #fff;}
+
+
+
